@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85F3CEC9-3E2C-42AB-B77A-4861CEE1325E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>test</RootNamespace>
+    <AssemblyName>test</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>DVDRent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CustomerData.cs" />
+    <Compile Include="Data\DB.cs" />
+    <Compile Include="Data\DVDData.cs" />
+    <Compile Include="Data\EntityData.cs" />
+    <Compile Include="Data\RentData.cs" />
+    <Compile Include="DVD.cs">
+      <DependentUpon>DVDRent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DVDRent.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DVDRent.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DVDRent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DVDRent.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DVDRent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DVDRent.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Rent.cs" />
+    <Compile Include="Forms\CustoemrForms\InsertCusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustoemrForms\InsertCusForm.Designer.cs">
+      <DependentUpon>InsertCusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustoemrForms\SearchCusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustoemrForms\SearchCusForm.Designer.cs">
+      <DependentUpon>SearchCusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustoemrForms\UpdateInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustoemrForms\UpdateInfoForm.Designer.cs">
+      <DependentUpon>UpdateInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DVDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DVDForm.Designer.cs">
+      <DependentUpon>DVDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DVDForms\InsertDVDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DVDForms\InsertDVDForm.Designer.cs">
+      <DependentUpon>InsertDVDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DVDForms\SearchDVDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DVDForms\SearchDVDForm.Designer.cs">
+      <DependentUpon>SearchDVDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DVDForms\UpdateDVDInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DVDForms\UpdateDVDInfoForm.Designer.cs">
+      <DependentUpon>UpdateDVDInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentForm.Designer.cs">
+      <DependentUpon>RentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RentForms\RentDVDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentForms\RentDVDForm.Designer.cs">
+      <DependentUpon>RentDVDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RentForms\ReturnDVDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentForms\ReturnDVDForm.Designer.cs">
+      <DependentUpon>ReturnDVDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RentForms\SearchRentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentForms\SearchRentForm.Designer.cs">
+      <DependentUpon>SearchRentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RentForms\SearchDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RentForms\SearchDateForm.Designer.cs">
+      <DependentUpon>SearchDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rent.cs">
+      <DependentUpon>DVDRent.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\CustoemrForms\InsertCusForm.resx">
+      <DependentUpon>InsertCusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustoemrForms\SearchCusForm.resx">
+      <DependentUpon>SearchCusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustoemrForms\UpdateInfoForm.resx">
+      <DependentUpon>UpdateInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DVDForm.resx">
+      <DependentUpon>DVDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DVDForms\InsertDVDForm.resx">
+      <DependentUpon>InsertDVDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DVDForms\SearchDVDForm.resx">
+      <DependentUpon>SearchDVDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DVDForms\UpdateDVDInfoForm.resx">
+      <DependentUpon>UpdateDVDInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentForm.resx">
+      <DependentUpon>RentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentForms\RentDVDForm.resx">
+      <DependentUpon>RentDVDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentForms\ReturnDVDForm.resx">
+      <DependentUpon>ReturnDVDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentForms\SearchRentForm.resx">
+      <DependentUpon>SearchRentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RentForms\SearchDateForm.resx">
+      <DependentUpon>SearchDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="DVDRent.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DVDRent.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DVDRent.edmx.diagram">
+      <DependentUpon>DVDRent.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\DVD.datasource" />
+    <None Include="Properties\DataSources\Rent.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DVDRent.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DVDRent.edmx</DependentUpon>
+      <LastGenOutput>DVDRent.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DVDRent.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DVDRent.edmx</DependentUpon>
+      <LastGenOutput>DVDRent.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
