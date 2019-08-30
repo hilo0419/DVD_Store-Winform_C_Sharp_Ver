@@ -58,10 +58,11 @@ namespace test.Forms.CustoemrForms
             }
             //3.가입
             Customer customer = new Customer();
+            customer.CustomerID = DB.Customer.Count();
             customer.LoginID = txbId.Text;
             customer.Name = name;
             customer.PhoneNumber = phoneNumber;
-
+            
             DB.Customer.Insert(customer);
             //4.메세지박스-가입완료
             MessageBox.Show("가입이 완료되었습니다");

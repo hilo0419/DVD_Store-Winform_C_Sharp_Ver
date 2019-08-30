@@ -38,6 +38,13 @@ namespace test.Data
                 return context.Set<Customer>().ToList();
             }
         }
+        public int Count()
+        {
+            using (DVDRentEntities context = new DVDRentEntities())
+            {
+                return context.Customers.Count() + 1;
+            }
+        }
         public List<Customer> SearchIdList(string id)
         {
             using (DVDRentEntities context = new DVDRentEntities())
